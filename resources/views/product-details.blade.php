@@ -102,14 +102,33 @@
                             </div>
                         </div>
                     </div>
-                    <form action="{{ route('stripe.payment') }}" method="post">
+                    <form action="{{ route('razorpay.payment') }}" method="post">
                         @csrf
-                        <input type="hidden" name="price" id="price" value="40" />
-                        <button class="btn btn-warning shadow-0" type="submit">
-                            Buy now
-                        </button>
-                        <a href="#" class="btn btn-primary shadow-0"> <i class="me-1 fa fa-shopping-basket"></i> Add to cart </a>
-                        <a href="#" class="btn btn-light border border-secondary py-2 icon-hover px-3"> <i class="me-1 fa fa-heart fa-lg"></i> Save </a>
+                        <script src="https://checkout.razorpay.com/v1/checkout.js"
+                            data-key="{{config('razorpay.key')}}"
+                            data-amount= "{{ 40 * 100 }}"
+                            data-buttontext="Pay with Razorpay"
+                            data-name="Acme Store"
+                            data-description="Test Transaction"
+                            data-image=""
+                            data-prefill.name="John Doe"
+                            data-prefill.email="john@example.com"
+                            data-theme.color="#ff7529">
+                        </script>
+                        <!-- <script src="https://checkout.razorpay.com/v1/checkout.js"
+                            data-key="{{config('razorpay.')}}"
+                            data-amount= "50000"
+                            data-currency="INR"
+                            data-order_id="order_9A33X8uLDaKFqS"
+                            data-buttontext="Pay with Razorpay"
+                            data-name="Acme Store"
+                            data-description="Test Transaction"
+                            data-image=""
+                            data-prefill.name="John Doe"
+                            data-prefill.email="john@example.com"
+                            data-theme.color="#ff7529">
+                        </script> -->
+                        
                     </form>
                 </div>
             </main>
