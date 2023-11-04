@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Gateways\PaypalController;
 use App\Http\Controllers\Gateways\StripeController;
+use App\Http\Controllers\Gateways\TwoCheckoutController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,3 +50,8 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+// 2Checkout Payment
+Route::post('/twocheckout/payment', [TwoCheckoutController::class, 'showForm'])->name('twocheckout.payment');
+Route::get('/twocheckout/handle-payment', [TwoCheckoutController::class, 'handlePayment'])->name('twocheckout.handle-payment');
+Route::get('/twocheckout/cancel', [TwoCheckoutController::class, 'cancel'])->name('twocheckout.cancel');

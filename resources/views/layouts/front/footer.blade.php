@@ -138,7 +138,9 @@
       {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/js/mdb.min.js" integrity="sha512-XFd1m0eHgU1F05yOmuzEklFHtiacLVbtdBufAyZwFR0zfcq7vc6iJuxerGPyVFOXlPGgM8Uhem9gwzMI8SJ5uw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
       {{-- <script type="text/javascript" src="js/mdb.min.js"></script> --}}
       <!-- Custom scripts -->
+      <script type="text/javascript" src="https://2pay-js.2checkout.com/v1/2pay.js"></script>
       <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
+
   </body>
   </html>
   

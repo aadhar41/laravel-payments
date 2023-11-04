@@ -102,7 +102,7 @@
                             </div>
                         </div>
                     </div>
-                    <form action="{{ route('stripe.payment') }}" method="post">
+                    <form action="{{ route('twocheckout.payment') }}" method="post">
                         @csrf
                         <input type="hidden" name="price" id="price" value="40" />
                         <button class="btn btn-warning shadow-0" type="submit">
